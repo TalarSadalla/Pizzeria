@@ -1,0 +1,5 @@
+<button class="project" [routerLink]="['/project-details', project.id]">
+  <img [src]="project.icon">
+  <h3>{{project.name}}</h3>
+  <button href="#" (click)="delete(project, $event)" class="delete">X</button>
+</button>

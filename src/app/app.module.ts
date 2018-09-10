@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderComponent } from './order/order.component';
 import { OrderDetailComponent } from './order-detail/order-detail.component';
 import { OrderFormComponent } from './order-form/order-form.component';
+import { OrderFormConfirmationComponent } from './order-form-confirmation/order-form-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OrderFormComponent } from './order-form/order-form.component';
     OrderComponent,
     OrderDetailComponent,
     OrderFormComponent,
+    OrderFormConfirmationComponent,
   ],
   imports: [
     BrowserModule,

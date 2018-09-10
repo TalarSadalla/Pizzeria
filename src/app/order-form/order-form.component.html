@@ -1,0 +1,120 @@
+<div class="box">
+  <div class="container">
+    <H3>Summary</H3>
+    Delivery information:<br><br><br>
+    <form name="form" #orderForm="ngForm">
+      <div class="row">
+        <div class="col-40">
+          <label for="firstName">Firstname:</label><br>
+          <input (blur)="getFirstName($event)" class="col-60" type="text" id="firstName" required
+                 placeholder="Firstname:"
+                 [(ngModel)]="delivery.firstName"
+                 name="firstName"
+                 #ngfirstName="ngModel">
+          <div [hidden]="ngfirstName.valid || ngfirstName.pristine">
+            Required.
+          </div>
+        </div>
+        <div class="col-40">
+          <label for="lastName">Lastname:</label><br>
+          <input (blur)="getLastName($event)" class="col-60" type="text" id="lastName" required
+                 placeholder="Lastname"
+                 [(ngModel)]="delivery.lastName"
+                 name="lastName"
+                 #nglastName="ngModel">
+          <div [hidden]="nglastName.valid || nglastName.pristine">
+            Required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="phone">Phone number:</label><br>
+          <input (blur)="getPhoneNumber($event)" class="col-60" type="text" id="phone"
+                 placeholder="Phone number"
+                 [(ngModel)]="delivery.phone"
+                 name="phone"
+                 required
+                 #ngPhone="ngModel">
+          <div [hidden]="ngPhone.valid || ngPhone.pristine">
+            Required.
+          </div>
+        </div>
+        <div class="col-40">
+          <label for="email">Email:</label><br>
+          <input (blur)="getEmail($event)" class="col-60" type="text" id="email"
+                 placeholder="Email"
+                 [(ngModel)]="delivery.email"
+                 name="email"
+                 required
+                 #ngEmail="ngModel">
+          <div [hidden]="ngEmail.valid || ngEmail.pristine">
+            Required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="city">City:</label><br>
+          <input (blur)="getCity($event)" class="col-60" type="text" id="city"
+                 placeholder="City"
+                 [(ngModel)]="delivery.city"
+                 name="city"
+                 required
+                 #ngCity="ngModel">
+          <div [hidden]="ngCity.valid || ngCity.pristine">
+            Required.
+          </div>
+        </div>
+        <div class="col-40">
+          <label for="street">Street:</label><br>
+          <input (blur)="getStreet($event)" class="col-60" type="text" id="street"
+                 placeholder="Street"
+                 [(ngModel)]="delivery.street"
+                 name="street"
+                 required
+                 #ngStreet="ngModel">
+          <div [hidden]="ngStreet.valid || ngStreet.pristine">
+            Required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-40">
+          <label for="flatNumber">Number:</label><br>
+          <input (blur)="getFlatNumber($event)" class="col-60" type="text" id="flatNumber"
+                 placeholder="Number"
+                 [(ngModel)]="delivery.flatNumber"
+                 name="flatNumber"
+                 required
+                 #ngFlatNr="ngModel">
+          <div [hidden]="ngFlatNr.valid || ngFlatNr.pristine">
+            Required.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-70">
+          <label>Payment method:</label><br>
+          <select (blur)="getPaymentMethod($event)" class="col-70" name="paymentMethod" id="paymentMethod"
+                  [(ngModel)]="delivery.paymentMethod">
+            <option value="cash">Cash on delivery</option>
+            <option value="przelewy24">Przelewy24</option>
+            <option value="blik">BLIK</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-60">
+          <button class="col-25" type="button" [disabled]="!orderForm.form.valid"
+                  (click)="saveOrder()" routerLink="/order-confirmation/">Order!
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <app-order></app-order>
+  </div>
+</div>

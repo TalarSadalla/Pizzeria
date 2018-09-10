@@ -1,0 +1,51 @@
+<h2>{{drink.name | uppercase}} details</h2>
+<div class="box" *ngIf="drink">
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Remove</th>
+    </tr>
+    <tr>
+      <td>{{drink.id}}</td>
+      <td>{{drink.name}}</td>
+      <td>{{drink.description}}</td>
+      <td>{{drink.price}}</td>
+      <td>
+        <button href="#" (click)="delete(drink, $event)" class="order">x</button>
+      </td>
+    </tr>
+    <tr>
+      <button (click)="goBack()">go back</button>
+    </tr>
+  </table>
+</div>
+
+<!--<div *ngIf="pasta">-->
+<!--<h2>{{pasta.name | uppercase}} Details</h2>-->
+<!--<div><span>id: </span>{{pasta.id}}</div>-->
+<!--<div>-->
+<!--<label>name:-->
+<!--<input [(ngModel)]="pasta.name" placeholder="name"/>-->
+<!--</label>-->
+<!--</div>-->
+<!--<button href="#" (click)="delete(pasta, $event)" class="delete">Delete drink</button>-->
+<!--<button (click)="goBack()">go back</button>-->
+<!--</div>-->
+
+
+
+<!--<div *ngIf="drink">-->
+  <!--<h2>{{drink.name | uppercase}} Details</h2>-->
+  <!--<div><span>id: </span>{{drink.id}}</div>-->
+  <!--<div>-->
+    <!--<label>name:-->
+      <!--<input [(ngModel)]="drink.name" placeholder="name"/>-->
+    <!--</label>-->
+  <!--</div>-->
+  <!--<button href="#" (click)="delete(drink, $event)" class="delete">Delete drink</button>-->
+  <!--<button (click)="goBack()">go back</button>-->
+<!--</div>-->
+

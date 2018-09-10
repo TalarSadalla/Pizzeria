@@ -1,0 +1,33 @@
+<h2>Drinks</h2>
+<div class="box">
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Details</th>
+      <th>Order</th>
+      <th>Remove</th>
+    </tr>
+    <tr *ngFor="let drink of drinks">
+      <td>{{drink.id}}</td>
+      <td>{{drink.name}}</td>
+      <td>{{drink.description}}</td>
+      <td>{{drink.price}}</td>
+      <td><a routerLink="/drink-detail/{{drink.id}} ">
+        <span class="badge">show</span>
+      </a>
+      </td>
+      <td>
+        <button href="#" (click)="addDish(drink)" class="order">+</button>
+      </td>
+      <td>
+        <button href="#" (click)="delete(drink)" class="order">x</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <app-order></app-order>
+</div>

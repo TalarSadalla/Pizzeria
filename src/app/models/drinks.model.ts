@@ -1,6 +1,6 @@
 import {Dishes} from './dishes.model';
 
-export interface Drinks extends Dishes {
+export class Drinks implements Dishes {
   id: number;
   name: string;
   isAvailable: boolean;

@@ -25,7 +25,7 @@
     }
   ],
   "pastas": [
-  {
+    {
       "id": 1,
       "name": "Spagetti Bolognese",
       "isAvailable": false,
@@ -39,7 +39,7 @@
       "description": "Sos boloński z szynką i kukurydzą",
       "price": "17.50"
     }
-	],
+  ],
   "orders": [
     {
       "id": 1,
@@ -47,6 +47,59 @@
         1,
         5
       ]
+    },
+    {
+      "deliveryAddress": {
+        "paymentMethod": "blik",
+        "orderStatus": "inProgress",
+        "firstName": "Sadalla",
+        "city": "Poznań",
+        "street": "Ptasia 16",
+        "flatNumber": "Ptasia 16",
+        "lastName": "Sadalla",
+        "phone": "0660461470",
+        "email": "masakra2008@gmail.com"
+      },
+      "orderStatus": "IN PROGRESS",
+      "id": 2
+    },
+    {
+      "deliveryAddress": {
+        "paymentMethod": "cash",
+        "orderStatus": "inProgress",
+        "firstName": "Sadalla",
+        "city": "Poznań",
+        "street": "Ptasia 16",
+        "flatNumber": "Ptasia 16",
+        "lastName": "Sadalla",
+        "phone": "0660461470",
+        "email": "masakra2008@gmail.com"
+      },
+      "orderStatus": "IN PROGRESS",
+      "productList": [
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": true,
+          "description": "Sos, ser",
+          "price": "22"
+        },
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "price": "23.50"
+        },
+        {
+          "id": 1,
+          "name": "Spagetti Bolognese",
+          "isAvailable": false,
+          "description": "Sos boloński",
+          "price": "14"
+        }
+      ],
+      "id": 3
     }
   ],
   "users": [

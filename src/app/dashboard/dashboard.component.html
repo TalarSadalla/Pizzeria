@@ -1,0 +1,97 @@
+<h3>Menu</h3>
+<div class="box">
+  <div class="">
+    <h2>Pizzas</h2>
+    <table>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Details</th>
+        <th>Order</th>
+        <th>Remove</th>
+      </tr>
+      <tr *ngFor="let pizza of pizzas">
+        <td>{{pizza.id}}</td>
+        <td>{{pizza.name}}</td>
+        <td>{{pizza.description}}</td>
+        <td>{{pizza.price}}</td>
+        <td><a routerLink="/pizza-detail/{{pizza.id}} ">
+          <span class="badge">show</span>
+        </a>
+        </td>
+        <td>
+          <button href="#" (click)="addDish(pizza)" class="order">+</button>
+        </td>
+        <td>
+          <button href="#" (click)="deletePizza(pizza)" class="order">x</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Pastas</h2>
+    <table>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Details</th>
+        <th>Order</th>
+        <th>Remove</th>
+      </tr>
+      <tr *ngFor="let pasta of pastas">
+        <td>{{pasta.id}}</td>
+        <td>{{pasta.name}}</td>
+        <td>{{pasta.description}}</td>
+        <td>{{pasta.price}}</td>
+        <td><a routerLink="/pasta-detail/{{pasta.id}} ">
+          <span class="badge">show</span>
+        </a>
+        </td>
+        <td>
+          <button href="#" (click)="addDish(pasta)" class="order">+</button>
+        </td>
+        <td>
+          <button href="#" (click)="deletePasta(pasta)" class="order">x</button>
+        </td>
+      </tr>
+    </table>
+    <h2>Drinks</h2>
+    <table>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Details</th>
+        <th>Order</th>
+        <th>Remove</th>
+      </tr>
+      <tr *ngFor="let drink of drinks">
+        <td>{{drink.id}}</td>
+        <td>{{drink.name}}</td>
+        <td>{{drink.description}}</td>
+        <td>{{drink.price}}</td>
+        <td><a routerLink="/drink-detail/{{drink.id}} ">
+          <span class="badge">show</span>
+        </a>
+        </td>
+        <td>
+          <button href="#" (click)="addDish(drink)" class="order">+</button>
+        </td>
+        <td>
+          <button href="#" (click)="deleteDrink(drink)" class="order">x</button>
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <app-order></app-order>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,34 @@
+<h2>Pasta</h2>
+<div>
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Details</th>
+      <th>Order</th>
+      <th>Remove</th>
+    </tr>
+    <tr *ngFor="let pasta of pastas">
+      <td>{{pasta.id}}</td>
+      <td>{{pasta.name}}</td>
+      <td>{{pasta.description}}</td>
+      <td>{{pasta.price}}</td>
+      <td>
+        <a routerLink="/pasta-detail/{{pasta.id}} ">
+          <span class="badge">show</span>
+        </a>
+      </td>
+      <td>
+        <button href="#" (click)="addDish(pasta)" class="order">+</button>
+      </td>
+      <td>
+        <button href="#" (click)="delete(pasta)" class="order">x</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <app-order></app-order>
+</div>

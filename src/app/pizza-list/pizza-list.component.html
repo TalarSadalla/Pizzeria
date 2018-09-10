@@ -1,8 +1,33 @@
 <h2>Pizza</h2>
-<ul class="pizza">
-  <li *ngFor="let pizza of pizzas">
-    <a routerLink="/detail/{{pizza.id}}">
-      <span class="badge">{{pizza.id}}</span> {{pizza.name}}
-    </a>
-  </li>
-</ul>
+<div class="box">
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Details</th>
+      <th>Order</th>
+      <th>Remove</th>
+    </tr>
+    <tr *ngFor="let pizza of pizzas">
+      <td>{{pizza.id}}</td>
+      <td>{{pizza.name}}</td>
+      <td>{{pizza.description}}</td>
+      <td>{{pizza.price}}</td>
+      <td><a routerLink="/pizza-detail/{{pizza.id}} ">
+        <span class="badge">show</span>
+      </a>
+      </td>
+      <td>
+        <button href="#" (click)="addDish(pizza)" class="order">+</button>
+      </td>
+      <td>
+        <button href="#" (click)="delete(pizza)" class="order">x</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <app-order></app-order>
+</div>

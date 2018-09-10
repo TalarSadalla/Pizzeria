@@ -13,14 +13,14 @@ export class PizzaService {
   ) {}
 
   getPizzas(): Observable<Pizzas[]> {
-    return this.http.get<Pizzas[]>('/api/pizzas');
+    return this.http.get<Pizzas[]>('http://localhost:3000/pizzas');
   }
 
   getPizza(id: number): Observable<Pizzas> {
-    return this.http.get<Pizzas>(`/api/pizzas/${id}`);
+    return this.http.get<Pizzas>(`http://localhost:3000/pizzas/${id}`);
   }
 
   deletePizza(id: number): Observable<void> {
-    return this.http.delete<void>(`/api/pizzas/${id}`);
+    return this.http.delete<void>(`http://localhost:3000/pizzas/${id}`);
   }
 }

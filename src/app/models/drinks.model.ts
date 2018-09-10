@@ -6,4 +6,5 @@ export interface Drinks extends Dishes {
   isAvailable: boolean;
   description: string;
   price: number;
+
 }

@@ -4,11 +4,13 @@ import {Pizzas} from '../models/pizzas.model';
 import {PizzaService} from '../pizza.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
+import {Dishes} from '../models/dishes.model';
+import {OrderService} from '../order.service';
 
 @Component({
   selector: 'app-pizza-list',
   templateUrl: './pizza-list.component.html',
-  styleUrls: ['./pizza-list.component.css']
+  styleUrls: ['./pizza-list.component.scss']
 })
 export class PizzaListComponent implements OnInit, OnDestroy {
 
@@ -17,6 +19,7 @@ export class PizzaListComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly service: PizzaService,
+    private orderService: OrderService,
   ) {
   }
 
@@ -41,5 +44,9 @@ export class PizzaListComponent implements OnInit, OnDestroy {
       .subscribe(() => {
         this.loadPizzas();
       });
+  }
+
+  addDish(dish: Dishes): void {
+    this.orderService.add(dish);
   }
 }

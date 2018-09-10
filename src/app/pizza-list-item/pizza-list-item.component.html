@@ -1,5 +1,39 @@
-<button class="project" [routerLink]="['/project-details', project.id]">
-  <img [src]="project.icon">
-  <h3>{{project.name}}</h3>
-  <button href="#" (click)="delete(project, $event)" class="delete">X</button>
-</button>
+<h2>{{pizza.name | uppercase}} details</h2>
+<div class="box" *ngIf="pizza">
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Remove</th>
+    </tr>
+    <tr>
+      <td>{{pizza.id}}</td>
+      <td>{{pizza.name}}</td>
+      <td>{{pizza.description}}</td>
+      <td>{{pizza.price}}</td>
+      <td>
+        <button href="#" (click)="delete(pizza, $event)" class="delete">x</button>
+      </td>
+    </tr>
+    <tr>
+      <button (click)="goBack()">go back</button>
+    </tr>
+  </table>
+</div>
+
+<!--<div *ngIf="pizza">-->
+<!--<h2>{{pizza.name | uppercase}} Details</h2>-->
+<!--<div><span>id: </span>{{pizza.id}}</div>-->
+<!--<div>-->
+<!--<label>name:-->
+<!--<input [(ngModel)]="pizza.name" placeholder="name"/>-->
+<!--</label>-->
+<!--</div>-->
+<!--<button href="#" (click)="delete(pizza, $event)" class="delete">Delete pizza</button>-->
+<!--<button (click)="goBack()">go back</button>-->
+<!--</div>-->
+
+
+

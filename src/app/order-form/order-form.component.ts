@@ -11,7 +11,7 @@ import {OrderStatus} from '../models/orderStatus';
 })
 export class OrderFormComponent implements OnInit {
   delivery = new Delivery();
-
+  newOrder = new Orders();
 
   constructor(public orderService: OrderService) {
   }
@@ -53,12 +53,12 @@ export class OrderFormComponent implements OnInit {
 
 
   saveOrder(): void {
-    const newOrder = new Orders();
-    newOrder.productList = this.orderService.orders;
-    newOrder.orderStatus = OrderStatus.inProgress;
-    newOrder.summaryPrice = this.orderService.getOrderPrice();
-    newOrder.deliveryAddress = this.delivery;
-    this.orderService.saveOrder(newOrder);
+    this.newOrder.productList = this.orderService.orders;
+    this.newOrder.orderStatus = OrderStatus.inProgress;
+    this.newOrder.summaryPrice = this.orderService.getOrderPrice();
+    this.newOrder.deliveryAddress = this.delivery;
+    this.orderService.saveOrder(this.newOrder);
+    this.orderService.clear();
   }
 
 }

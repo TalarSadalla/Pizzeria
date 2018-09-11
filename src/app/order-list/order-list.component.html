@@ -1,0 +1,34 @@
+<h2>Orders</h2>
+<div>
+  <table>
+    <tr>
+      <th>Number</th>
+      <th>Ordered products</th>
+      <th>Summary price</th>
+      <th>Delivery address</th>
+      <th>Status</th>
+      <th>Remove</th>
+    </tr>
+    <tr *ngFor="let order of orders">
+      <td>{{order.id}}</td>
+      <td>
+        <span *ngFor="let product of order.productList">
+          <div>{{product.name}}</div>
+        </span>
+      </td>
+      <td>{{order.summaryPrice}}</td>
+      <td>{{order.orderStatus}}</td>
+      <td>
+        <a routerLink="/order-detail/{{order.id}} ">
+          <span class="badge">show</span>
+        </a>
+      </td>
+      <td>
+        <button href="#" (click)="delete(order)" class="order">x</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <app-order></app-order>
+</div>

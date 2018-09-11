@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import {Dishes} from './models/dishes.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
@@ -8,7 +8,7 @@ import {Orders} from './models/orders.model';
   providedIn: 'root',
 })
 
-export class OrderService implements OnInit {
+export class OrderService implements OnInit, OnDestroy {
   orders: Dishes[] = [];
 
   constructor(
@@ -26,12 +26,16 @@ export class OrderService implements OnInit {
     return sumCount;
   }
 
-  getOrders(): Observable<Dishes[]> {
-    return this.http.get<Dishes[]>('/order');
+  getOrders(): Observable<Orders[]> {
+    return this.http.get<Orders[]>('http://localhost:3000/orders');
   }
 
   saveOrder(order: Orders): void {
     this.http.post<Orders>('http://localhost:3000/orders', order).subscribe();
+  }
+
+  deleteOrder(id: number): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/orders/${id}`);
   }
 
   clear() {
@@ -40,4 +44,9 @@ export class OrderService implements OnInit {
 
   ngOnInit(): void {
   }
+
+  ngOnDestroy(): void {
+  }
+
+
 }

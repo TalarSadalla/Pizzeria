@@ -15,7 +15,7 @@
   </table>
   <span class="order grey">Price of the order: {{orderService.getOrderPrice()}}</span>
 </div>
-<td><a routerLink="/orderForm/">
+<td><a *ngIf="orderService.orders.length" routerLink="/orderForm/">
   <span class="badge">Take the order</span>
 </a>
 

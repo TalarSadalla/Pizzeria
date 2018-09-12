@@ -11,7 +11,7 @@ import {Location} from '@angular/common';
 })
 
 export class PizzaListItemComponent implements OnInit {
-  @Input() pizza: Pizzas;
+  pizza: Pizzas;
   @Output() deletes = new EventEmitter<Pizzas>();
 
   constructor(private route: ActivatedRoute,
@@ -36,6 +36,10 @@ export class PizzaListItemComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  editPizzaAvailability(): void {
+    this.pizzaService.editPizza(this.pizza);
   }
 
 }

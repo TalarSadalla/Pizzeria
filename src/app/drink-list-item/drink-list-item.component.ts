@@ -38,4 +38,8 @@ export class DrinkListItemComponent implements OnInit {
     this.location.back();
   }
 
+  editDrinkAvailability(): void {
+    this.drinkService.editDrink(this.drink);
+  }
+
 }

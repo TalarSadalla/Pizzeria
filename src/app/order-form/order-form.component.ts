@@ -19,39 +19,6 @@ export class OrderFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  getFirstName(event: any) {
-    this.delivery.firstName = event.target.value;
-  }
-
-  getLastName(event: any) {
-    this.delivery.lastName = event.target.value;
-  }
-
-  getEmail(event: any) {
-    this.delivery.email = event.target.value;
-  }
-
-  getCity(event: any) {
-    this.delivery.city = event.target.value;
-  }
-
-  getPhoneNumber(event: any) {
-    this.delivery.phone = event.target.value;
-  }
-
-  getStreet(event: any) {
-    this.delivery.street = event.target.value;
-  }
-
-  getFlatNumber(event: any) {
-    this.delivery.flatNumber = event.target.value;
-  }
-
-  getPaymentMethod(event: any) {
-    this.delivery.paymentMethod = event.target.value;
-  }
-
-
   saveOrder(): void {
     this.newOrder.productList = this.orderService.orders;
     this.newOrder.orderStatus = OrderStatus.inProgress;

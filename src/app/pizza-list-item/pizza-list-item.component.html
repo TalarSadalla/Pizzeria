@@ -5,6 +5,7 @@
       <th>Number</th>
       <th>Name</th>
       <th>Description</th>
+      <th>Availability</th>
       <th>Price</th>
       <th>Remove</th>
     </tr>
@@ -12,6 +13,14 @@
       <td>{{pizza.id}}</td>
       <td>{{pizza.name}}</td>
       <td>{{pizza.description}}</td>
+      <td><select class="col-25" name="isAvailable" id="isAvailable" [(ngModel)]="pizza.isAvailable">
+        <option value=True>True</option>
+        <option value=False>False</option>
+      </select>
+        <button class="col-25"
+                (click)="editPizzaAvailability()" routerLink="/pizza-list/">Change availability
+        </button>
+      </td>
       <td>{{pizza.price}}</td>
       <td>
         <button href="#" (click)="delete(pizza, $event)" class="delete">x</button>
@@ -23,17 +32,7 @@
   </table>
 </div>
 
-<!--<div *ngIf="pizza">-->
-<!--<h2>{{pizza.name | uppercase}} Details</h2>-->
-<!--<div><span>id: </span>{{pizza.id}}</div>-->
-<!--<div>-->
-<!--<label>name:-->
-<!--<input [(ngModel)]="pizza.name" placeholder="name"/>-->
-<!--</label>-->
-<!--</div>-->
-<!--<button href="#" (click)="delete(pizza, $event)" class="delete">Delete pizza</button>-->
-<!--<button (click)="goBack()">go back</button>-->
-<!--</div>-->
+
 
 
 

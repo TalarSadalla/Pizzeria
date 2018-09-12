@@ -11,7 +11,7 @@ import {PastaService} from '../pasta.service';
 })
 
 export class PastaListItemComponent implements OnInit {
-  @Input() pasta: Pastas;
+  pasta: Pastas;
   @Output() deletes = new EventEmitter<Pastas>();
 
   constructor(private route: ActivatedRoute,
@@ -36,6 +36,10 @@ export class PastaListItemComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  editPastaAvailability(): void {
+    this.pastaService.editPasta(this.pasta);
   }
 
 }

@@ -30,8 +30,20 @@ export class OrderService implements OnInit, OnDestroy {
     return this.http.get<Orders[]>('http://localhost:3000/orders');
   }
 
+  getOrdersList(): Dishes[] {
+    return this.orders;
+  }
+
+  getOrder(id: number): Observable<Orders> {
+    return this.http.get<Orders>(`http://localhost:3000/orders/${id}`);
+  }
+
   saveOrder(order: Orders): void {
     this.http.post<Orders>('http://localhost:3000/orders', order).subscribe();
+  }
+
+  editOrder(order: Orders): void {
+    this.http.put(`http://localhost:3000/orders/${order.id}`, order).subscribe();
   }
 
   deleteOrder(id: number): Observable<void> {

@@ -23,4 +23,8 @@ export class PastaService {
   deletePasta(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/pastas/${id}`);
   }
+
+  editPasta(pasta: Pastas): void {
+    this.http.put(`http://localhost:3000/pastas/${pasta.id}`, pasta).subscribe();
+  }
 }

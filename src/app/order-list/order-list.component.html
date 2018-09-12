@@ -7,6 +7,7 @@
       <th>Summary price</th>
       <th>Delivery address</th>
       <th>Status</th>
+      <th>Details</th>
       <th>Remove</th>
     </tr>
     <tr *ngFor="let order of orders">
@@ -17,6 +18,13 @@
         </span>
       </td>
       <td>{{order.summaryPrice}}</td>
+      <td>
+        <span >
+          <div>{{order.deliveryAddress.city}}</div>
+          <div>{{order.deliveryAddress.street}}</div>
+          <div>{{order.deliveryAddress.flatNumber}}</div>
+        </span>
+      </td>
       <td>{{order.orderStatus}}</td>
       <td>
         <a routerLink="/order-detail/{{order.id}} ">

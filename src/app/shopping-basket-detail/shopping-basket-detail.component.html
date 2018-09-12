@@ -1,21 +1,21 @@
-<div *ngIf="orderService.orders.length" class="order">
+<div *ngIf="orderSize()" class="order">
   <h2>Orders</h2>
   <button class="clear"
-          (click)="orderService.clear()">clear
+          (click)="clearOrder()">clear
   </button>
   <table>
     <tr>
       <th>Dish name</th>
       <th>Dish price</th>
     </tr>
-    <tr class="order" *ngFor='let order of orderService.orders'>
+    <tr class="order" *ngFor='let order of getOrders()'>
       <th>{{order.name}}</th>
       <th>{{order.price}}</th>
     </tr>
   </table>
-  <span class="order grey">Price of the order: {{orderService.getOrderPrice()}}</span>
+  <span class="order grey">Price of the order: {{getOrderPrice()}}</span>
 </div>
-<td><a *ngIf="orderService.orders.length" routerLink="/orderForm/">
+<td><a *ngIf="orderSize()" routerLink="/orderForm/">
   <span class="badge">Take the order</span>
 </a>
 

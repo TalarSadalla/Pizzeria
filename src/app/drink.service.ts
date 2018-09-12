@@ -25,4 +25,8 @@ export class DrinkService {
     return this.http.delete<void>(`http://localhost:3000/drinks/${id}`);
   }
 
+  editDrink(drink: Drinks): void {
+    this.http.put(`http://localhost:3000/drinks/${drink.id}`, drink).subscribe();
+  }
+
 }

@@ -5,6 +5,7 @@
       <th>Number</th>
       <th>Name</th>
       <th>Description</th>
+      <th>Availability</th>
       <th>Price</th>
       <th>Remove</th>
     </tr>
@@ -12,6 +13,15 @@
       <td>{{pasta.id}}</td>
       <td>{{pasta.name}}</td>
       <td>{{pasta.description}}</td>
+      <td><select class="col-25" name="isAvailable" id="isAvailable"
+                 [(ngModel)]="pasta.isAvailable">
+        <option value=True>True</option>
+        <option value=False>False</option>
+      </select>
+        <button class="col-25"
+                (click)="editPastaAvailability()" routerLink="/pasta-list/">Change availability
+        </button>
+      </td>
       <td>{{pasta.price}}</td>
       <td>
         <button href="#" (click)="delete(pasta, $event)" class="order">x</button>
@@ -24,14 +34,14 @@
 </div>
 
 <!--<div *ngIf="pasta">-->
-  <!--<h2>{{pasta.name | uppercase}} Details</h2>-->
-  <!--<div><span>id: </span>{{pasta.id}}</div>-->
-  <!--<div>-->
-    <!--<label>name:-->
-      <!--<input [(ngModel)]="pasta.name" placeholder="name"/>-->
-    <!--</label>-->
-  <!--</div>-->
-  <!--<button href="#" (click)="delete(pasta, $event)" class="delete">Delete drink</button>-->
-  <!--<button (click)="goBack()">go back</button>-->
+<!--<h2>{{pasta.name | uppercase}} Details</h2>-->
+<!--<div><span>id: </span>{{pasta.id}}</div>-->
+<!--<div>-->
+<!--<label>name:-->
+<!--<input [(ngModel)]="pasta.name" placeholder="name"/>-->
+<!--</label>-->
+<!--</div>-->
+<!--<button href="#" (click)="delete(pasta, $event)" class="delete">Delete drink</button>-->
+<!--<button (click)="goBack()">go back</button>-->
 <!--</div>-->
 

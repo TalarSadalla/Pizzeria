@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Pizza Margherita",
-      "isAvailable": true,
+      "isAvailable": "False",
       "description": "Sos, ser",
       "price": "22"
     },
@@ -28,7 +28,7 @@
     {
       "id": 1,
       "name": "Spagetti Bolognese",
-      "isAvailable": false,
+      "isAvailable": "True",
       "description": "Sos boloński",
       "price": "14"
     },
@@ -58,7 +58,7 @@
           "price": "23.50"
         }
       ],
-      "orderStatus": "IN PROGRESS",
+      "orderStatus": "ORDER ACCEPTED",
       "summaryPrice": 45.5,
       "deliveryAddress": {
         "paymentMethod": "paypal",
@@ -90,7 +90,7 @@
           "price": "23.50"
         }
       ],
-      "orderStatus": "IN PROGRESS",
+      "orderStatus": "DELIVERED",
       "summaryPrice": 45.5,
       "deliveryAddress": {
         "paymentMethod": "cash",
@@ -104,6 +104,95 @@
         "email": "a"
       },
       "id": 3
+    },
+    {
+      "productList": [
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "price": "23.50"
+        },
+        {
+          "id": 2,
+          "name": "Spagetti Siciliana",
+          "isAvailable": true,
+          "description": "Sos boloński z szynką i kukurydzą",
+          "price": "17.50"
+        }
+      ],
+      "orderStatus": "DELIVERED",
+      "summaryPrice": 41,
+      "deliveryAddress": {
+        "paymentMethod": "blik",
+        "orderStatus": "inProgress",
+        "firstName": "Talar",
+        "lastName": "Sadalla",
+        "phone": "0660461470",
+        "city": "Poznań",
+        "street": "Murawa",
+        "flatNumber": "35",
+        "email": "talarsadalla@yahoo.com"
+      },
+      "id": 4
+    },
+    {
+      "productList": [
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": true,
+          "description": "Sos, ser",
+          "price": "22"
+        },
+        {
+          "id": 1,
+          "name": "Spagetti Bolognese",
+          "isAvailable": false,
+          "description": "Sos boloński",
+          "price": "14"
+        }
+      ],
+      "orderStatus": "SENT",
+      "summaryPrice": 36,
+      "deliveryAddress": {
+        "paymentMethod": "przelewy24",
+        "orderStatus": "inProgress",
+        "firstName": "Jan",
+        "lastName": "Kowalski",
+        "phone": "3568762",
+        "email": "aaa",
+        "city": "Poznań",
+        "street": "Piotrowo",
+        "flatNumber": "4"
+      },
+      "id": 5
+    },
+    {
+      "productList": [
+        {
+          "id": 1,
+          "name": "Coca Cola",
+          "isAvailable": true,
+          "description": "Best drink in the world",
+          "price": "2.50"
+        }
+      ],
+      "orderStatus": "IN PROGRESS",
+      "summaryPrice": 2.5,
+      "deliveryAddress": {
+        "paymentMethod": "paypal",
+        "orderStatus": "inProgress",
+        "firstName": "aads",
+        "lastName": "dsada",
+        "phone": "dsadsa",
+        "email": "dsadsa",
+        "city": "dada",
+        "street": "das",
+        "flatNumber": "das"
+      },
+      "id": 6
     }
   ],
   "users": [

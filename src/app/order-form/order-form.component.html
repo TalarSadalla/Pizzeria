@@ -2,11 +2,11 @@
   <div class="container">
     <H3>Summary</H3>
     Delivery information:<br><br><br>
-    <form name="form" #orderForm="ngForm">
+    <form #f="ngForm" (ngSubmit)="saveOrder()" name="form" #orderForm="ngForm">
       <div class="row">
         <div class="col-40">
           <label for="firstName">Firstname:</label><br>
-          <input (blur)="getFirstName($event)" class="col-60" type="text" id="firstName" required
+          <input class="col-60" type="text" id="firstName" required
                  placeholder="Firstname:"
                  [(ngModel)]="delivery.firstName"
                  name="firstName"
@@ -17,7 +17,7 @@
         </div>
         <div class="col-40">
           <label for="lastName">Lastname:</label><br>
-          <input (blur)="getLastName($event)" class="col-60" type="text" id="lastName" required
+          <input class="col-60" type="text" id="lastName" required
                  placeholder="Lastname"
                  [(ngModel)]="delivery.lastName"
                  name="lastName"
@@ -30,7 +30,7 @@
       <div class="row">
         <div class="col-40">
           <label for="phone">Phone number:</label><br>
-          <input (blur)="getPhoneNumber($event)" class="col-60" type="text" id="phone"
+          <input class="col-60" type="text" id="phone"
                  placeholder="Phone number"
                  [(ngModel)]="delivery.phone"
                  name="phone"
@@ -42,7 +42,7 @@
         </div>
         <div class="col-40">
           <label for="email">Email:</label><br>
-          <input (blur)="getEmail($event)" class="col-60" type="text" id="email"
+          <input class="col-60" type="text" id="email"
                  placeholder="Email"
                  [(ngModel)]="delivery.email"
                  name="email"
@@ -56,7 +56,7 @@
       <div class="row">
         <div class="col-40">
           <label for="city">City:</label><br>
-          <input (blur)="getCity($event)" class="col-60" type="text" id="city"
+          <input class="col-60" type="text" id="city"
                  placeholder="City"
                  [(ngModel)]="delivery.city"
                  name="city"
@@ -68,7 +68,7 @@
         </div>
         <div class="col-40">
           <label for="street">Street:</label><br>
-          <input (blur)="getStreet($event)" class="col-60" type="text" id="street"
+          <input class="col-60" type="text" id="street"
                  placeholder="Street"
                  [(ngModel)]="delivery.street"
                  name="street"
@@ -82,7 +82,7 @@
       <div class="row">
         <div class="col-40">
           <label for="flatNumber">Number:</label><br>
-          <input (blur)="getFlatNumber($event)" class="col-60" type="text" id="flatNumber"
+          <input class="col-60" type="text" id="flatNumber"
                  placeholder="Number"
                  [(ngModel)]="delivery.flatNumber"
                  name="flatNumber"
@@ -96,7 +96,7 @@
       <div class="row">
         <div class="col-70">
           <label>Payment method:</label><br>
-          <select (blur)="getPaymentMethod($event)" class="col-70" name="paymentMethod" id="paymentMethod"
+          <select class="col-70" name="paymentMethod" id="paymentMethod"
                   [(ngModel)]="delivery.paymentMethod">
             <option value="cash">Cash on delivery</option>
             <option value="przelewy24">Przelewy24</option>

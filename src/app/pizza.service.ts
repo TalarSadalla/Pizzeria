@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Pizzas} from './models/pizzas.model';
@@ -22,5 +22,9 @@ export class PizzaService {
 
   deletePizza(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/pizzas/${id}`);
+  }
+
+  editPizza(pizza: Pizzas): void {
+    this.http.put(`http://localhost:3000/pizzas/${pizza.id}`, pizza).subscribe();
   }
 }

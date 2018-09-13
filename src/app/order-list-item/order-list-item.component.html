@@ -17,16 +17,22 @@
         </span>
       </td>
       <td>{{order?.summaryPrice}}</td>
-      <td>{{order?.deliveryAddress}}</td>
       <td>
-        <select class="col-70" name="orderStatus" id="orderStatus"
+        <span >
+          <div>{{order?.deliveryAddress?.city}}</div>
+          <div>{{order?.deliveryAddress?.street}}</div>
+          <div>{{order?.deliveryAddress?.flatNumber}}</div>
+        </span>
+      </td>
+      <td>
+        <select class="col-40" name="orderStatus" id="orderStatus"
                 [(ngModel)]="order.orderStatus">
           <option value="ORDER ACCEPTED">ORDER ACCEPTED</option>
           <option value="IN PROGRESS">IN PROGRESS</option>
           <option value="SENT">SENT</option>
           <option value="DELIVERED">DELIVERED</option>
         </select>
-        <button class="order"
+        <button class="addToOrder"
                 (click)="editOrderStatus()" routerLink="/order-list/">Change status
         </button>
       </td>

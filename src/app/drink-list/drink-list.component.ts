@@ -5,6 +5,7 @@ import {Drinks} from '../models/drinks.model';
 import {DrinkService} from '../drink.service';
 import {Dishes} from '../models/dishes.model';
 import {OrderService} from '../order.service';
+import {LoginDataService} from '../login-data.service';
 
 @Component({
   selector: 'app-drink-list',
@@ -18,7 +19,8 @@ export class DrinkListComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly service: DrinkService,
-    private orderService: OrderService,
+    private readonly orderService: OrderService,
+    private readonly loginService: LoginDataService
   ) {
   }
 
@@ -47,5 +49,9 @@ export class DrinkListComponent implements OnInit, OnDestroy {
 
   addDish(dish: Dishes): void {
     this.orderService.add(dish);
+  }
+
+  isAdminLogged(): boolean {
+    return this.loginService.getIsLogged();
   }
 }

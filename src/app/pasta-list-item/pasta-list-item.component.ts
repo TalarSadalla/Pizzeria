@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {Pastas} from '../models/pastas.model';
 import {PastaService} from '../pasta.service';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-pasta-list-item',
@@ -10,9 +11,11 @@ import {PastaService} from '../pasta.service';
   styleUrls: ['./pasta-list-item.component.scss']
 })
 
-export class PastaListItemComponent implements OnInit {
+export class PastaListItemComponent implements OnInit, OnDestroy {
   pasta: Pastas;
   @Output() deletes = new EventEmitter<Pastas>();
+
+  private readonly destroy$ = new Subject();
 
   constructor(private route: ActivatedRoute,
               private pastaService: PastaService,
@@ -40,6 +43,11 @@ export class PastaListItemComponent implements OnInit {
 
   editPastaAvailability(): void {
     this.pastaService.editPasta(this.pasta);
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 }

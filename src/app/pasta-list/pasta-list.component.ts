@@ -5,6 +5,7 @@ import {Pastas} from '../models/pastas.model';
 import {PastaService} from '../pasta.service';
 import {OrderService} from '../order.service';
 import {Dishes} from '../models/dishes.model';
+import {LoginDataService} from '../login-data.service';
 
 @Component({
   selector: 'app-pasta-list',
@@ -18,7 +19,8 @@ export class PastaListComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly service: PastaService,
-    private orderService: OrderService,
+    private readonly orderService: OrderService,
+    private readonly loginService: LoginDataService
   ) {
   }
 
@@ -47,5 +49,9 @@ export class PastaListComponent implements OnInit, OnDestroy {
 
   addDish(dish: Dishes): void {
     this.orderService.add(dish);
+  }
+
+  isAdminLogged(): boolean {
+    return this.loginService.getIsLogged();
   }
 }

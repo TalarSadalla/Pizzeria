@@ -1,4 +1,4 @@
-<h2>{{pizza.name | uppercase}} details</h2>
+<h2>{{pizza?.name | uppercase}} details</h2>
 <div class="box" *ngIf="pizza">
   <table>
     <tr>
@@ -10,20 +10,15 @@
       <th>Remove</th>
     </tr>
     <tr>
-      <td>{{pizza.id}}</td>
-      <td>{{pizza.name}}</td>
-      <td>{{pizza.description}}</td>
-      <td><select class="col-25" name="isAvailable" id="isAvailable" [(ngModel)]="pizza.isAvailable">
-        <option value=True>True</option>
-        <option value=False>False</option>
-      </select>
-        <button class="col-25"
-                (click)="editPizzaAvailability()" routerLink="/pizza-list/">Change availability
-        </button>
-      </td>
-      <td>{{pizza.price}}</td>
+      <td>{{pizza?.id}}</td>
+      <td>{{pizza?.name}}</td>
+      <td>{{pizza?.description}}</td>
       <td>
-        <button href="#" (click)="delete(pizza, $event)" class="delete">x</button>
+        <input class="col-25" type="checkbox" [(ngModel)]="pizza.isAvailable" (change)="editPizzaAvailability()">
+      </td>
+      <td>{{pizza?.price}}</td>
+      <td>
+        <button href="#" class="col-25" (click)="delete(pizza, $event)" class="delete">x</button>
       </td>
     </tr>
     <tr>

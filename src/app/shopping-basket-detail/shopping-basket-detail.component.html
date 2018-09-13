@@ -1,5 +1,5 @@
-<div *ngIf="orderSize()" class="order">
-  <h2>Orders</h2>
+<div *ngIf="orderSize()">
+  <h2>Your order</h2>
   <button class="clear"
           (click)="clearOrder()">clear
   </button>
@@ -9,8 +9,8 @@
       <th>Dish price</th>
     </tr>
     <tr class="order" *ngFor='let order of getOrders()'>
-      <th>{{order.name}}</th>
-      <th>{{order.price}}</th>
+      <th>{{order?.name}}</th>
+      <th>{{order?.price}}</th>
     </tr>
   </table>
   <span class="order grey">Price of the order: {{getOrderPrice()}}</span>

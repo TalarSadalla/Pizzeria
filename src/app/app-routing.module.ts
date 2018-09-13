@@ -12,6 +12,8 @@ import {OrderFormComponent} from './order-form/order-form.component';
 import {OrderFormConfirmationComponent} from './order-form-confirmation/order-form-confirmation.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {OrderListItemComponent} from './order-list-item/order-list-item.component';
+import {LoginComponent} from './login/login.component';
+import {LoginFailComponent} from './login/login-fail/login-fail.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: 'order-confirmation', component: OrderFormConfirmationComponent},
   {path: 'order-list', component: OrderListComponent},
   {path: 'order-detail/:id', component: OrderListItemComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'login-fail', component: LoginFailComponent},
 ];
 
 @NgModule({

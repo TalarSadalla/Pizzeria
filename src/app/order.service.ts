@@ -1,7 +1,7 @@
 import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import {Dishes} from './models/dishes.model';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {Orders} from './models/orders.model';
 
 @Injectable({
@@ -10,6 +10,8 @@ import {Orders} from './models/orders.model';
 
 export class OrderService implements OnInit, OnDestroy {
   orders: Dishes[] = [];
+
+  private readonly destroy$ = new Subject();
 
   constructor(
     readonly http: HttpClient,
@@ -58,7 +60,7 @@ export class OrderService implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
-
-
 }

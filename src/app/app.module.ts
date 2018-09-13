@@ -8,7 +8,7 @@ import {environment} from '../environments/environment';
 import {PizzaListComponent} from './pizza-list/pizza-list.component';
 import {PizzaListItemComponent} from './pizza-list-item/pizza-list-item.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PastaListComponent} from './pasta-list/pasta-list.component';
 import {PastaListItemComponent} from './pasta-list-item/pasta-list-item.component';
 import {DrinkListComponent} from './drink-list/drink-list.component';
@@ -20,6 +20,8 @@ import {OrderFormComponent} from './order-form/order-form.component';
 import {OrderFormConfirmationComponent} from './order-form-confirmation/order-form-confirmation.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import { OrderListItemComponent } from './order-list-item/order-list-item.component';
+import { LoginComponent } from './login/login.component';
+import { LoginFailComponent } from './login/login-fail/login-fail.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,14 @@ import { OrderListItemComponent } from './order-list-item/order-list-item.compon
     OrderFormConfirmationComponent,
     OrderListComponent,
     OrderListItemComponent,
+    LoginComponent,
+    LoginFailComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
   ],

@@ -4,12 +4,14 @@
     Welcome to {{ title }}!
   </h1>
   <nav>
-    <a routerLink="/dashboard">All dishes</a>
-    <a routerLink="/pizza-list">Pizzas</a>
-    <a routerLink="/pasta-list">Pastas</a>
-    <a routerLink="/drink-list">Drinks</a>
-    <a routerLink="/shopping-basket-detail">My Order</a>
-    <a routerLink="/order-list">Orders</a>
+    <a routerLink="/dashboard">Menu</a>
+    <a *ngIf="!isAdminLogged()" routerLink="/pizza-list">Pizzas</a>
+    <a *ngIf="!isAdminLogged()" routerLink="/pasta-list">Pastas</a>
+    <a *ngIf="!isAdminLogged()" routerLink="/drink-list">Drinks</a>
+    <a *ngIf="!isAdminLogged()" routerLink="/shopping-basket-detail">My Order</a>
+    <a *ngIf="isAdminLogged()" routerLink="/order-list">Orders</a>
+    <a *ngIf="!isAdminLogged()" routerLink="/login">Login</a>
+    <a *ngIf="isAdminLogged()" (click)="logoutAdmin()" routerLink="/logout">Logout</a>
   </nav>
 </div>
 

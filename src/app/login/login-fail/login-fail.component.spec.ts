@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PastaListComponent } from './pasta-list.component';
+import { LoginFailComponent } from './login-fail.component';
 
-fdescribe('PastaListComponent', () => {
-  let component: PastaListComponent;
-  let fixture: ComponentFixture<PastaListComponent>;
+describe('LoginFailComponent', () => {
+  let component: LoginFailComponent;
+  let fixture: ComponentFixture<LoginFailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PastaListComponent ]
+      declarations: [ LoginFailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PastaListComponent);
+    fixture = TestBed.createComponent(LoginFailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

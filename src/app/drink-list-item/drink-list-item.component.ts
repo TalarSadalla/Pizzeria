@@ -1,8 +1,9 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, OnDestroy} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {Drinks} from '../models/drinks.model';
 import {DrinkService} from '../drink.service';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: 'app-drink-list-item',
@@ -10,9 +11,11 @@ import {DrinkService} from '../drink.service';
   styleUrls: ['./drink-list-item.component.scss']
 })
 
-export class DrinkListItemComponent implements OnInit {
-  @Input() drink: Drinks;
+export class DrinkListItemComponent implements OnInit, OnDestroy {
+  drink: Drinks;
   @Output() deletes = new EventEmitter<Drinks>();
+
+  private readonly destroy$ = new Subject();
 
   constructor(private route: ActivatedRoute,
               private drinkService: DrinkService,
@@ -40,6 +43,11 @@ export class DrinkListItemComponent implements OnInit {
 
   editDrinkAvailability(): void {
     this.drinkService.editDrink(this.drink);
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
 }

@@ -11,23 +11,23 @@
       <th>Remove</th>
     </tr>
     <tr *ngFor="let order of orders">
-      <td>{{order.id}}</td>
+      <td>{{order?.id}}</td>
       <td>
         <span *ngFor="let product of order.productList">
-          <div>{{product.name}}</div>
+          <div>{{product?.name}}</div>
         </span>
       </td>
-      <td>{{order.summaryPrice}}</td>
+      <td>{{order?.summaryPrice}}</td>
       <td>
         <span >
-          <div>{{order.deliveryAddress.city}}</div>
-          <div>{{order.deliveryAddress.street}}</div>
-          <div>{{order.deliveryAddress.flatNumber}}</div>
+          <div>{{order?.deliveryAddress?.city}}</div>
+          <div>{{order?.deliveryAddress?.street}}</div>
+          <div>{{order?.deliveryAddress?.flatNumber}}</div>
         </span>
       </td>
-      <td>{{order.orderStatus}}</td>
+      <td>{{order?.orderStatus}}</td>
       <td>
-        <a routerLink="/order-detail/{{order.id}} ">
+        <a routerLink="/order-detail/{{order?.id}} ">
           <span class="badge">show</span>
         </a>
       </td>

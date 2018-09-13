@@ -1,4 +1,4 @@
-<h2>{{drink.name | uppercase}} details</h2>
+<h2>{{drink?.name | uppercase}} details</h2>
 <div class="box" *ngIf="drink">
   <table>
     <tr>
@@ -10,20 +10,13 @@
       <th>Remove</th>
     </tr>
     <tr>
-      <td>{{drink.id}}</td>
-      <td>{{drink.name}}</td>
-      <td>{{drink.description}}</td>
+      <td>{{drink?.id}}</td>
+      <td>{{drink?.name}}</td>
+      <td>{{drink?.description}}</td>
       <td>
-        <select class="col-25" name="isAvailable" id="isAvailable"
-               [(ngModel)]="drink.isAvailable">
-          <option value=True>True</option>
-          <option value=False>False</option>
-      </select>
-        <button class="col-25"
-                (click)="editDrinkAvailability()" routerLink="/drink-list/">Change availability
-        </button>
+        <input class="col-25" type="checkbox" [(ngModel)]="drink.isAvailable" (change)="editDrinkAvailability()">
       </td>
-      <td>{{drink.price}}</td>
+      <td>{{drink?.price}}</td>
       <td>
         <button href="#" (click)="delete(drink, $event)" class="order">x</button>
       </td>

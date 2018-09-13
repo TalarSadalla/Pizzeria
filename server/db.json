@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Pizza Margherita",
-      "isAvailable": "False",
+      "isAvailable": true,
       "description": "Sos, ser",
       "price": "22"
     },
@@ -28,14 +28,14 @@
     {
       "id": 1,
       "name": "Spagetti Bolognese",
-      "isAvailable": "True",
+      "isAvailable": false,
       "description": "Sos boloński",
       "price": "14"
     },
     {
       "id": 2,
       "name": "Spagetti Siciliana",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Sos boloński z szynką i kukurydzą",
       "price": "17.50"
     }
@@ -58,7 +58,7 @@
           "price": "23.50"
         }
       ],
-      "orderStatus": "ORDER ACCEPTED",
+      "orderStatus": "SENT",
       "summaryPrice": 45.5,
       "deliveryAddress": {
         "paymentMethod": "paypal",
@@ -90,7 +90,7 @@
           "price": "23.50"
         }
       ],
-      "orderStatus": "DELIVERED",
+      "orderStatus": "SENT",
       "summaryPrice": 45.5,
       "deliveryAddress": {
         "paymentMethod": "cash",
@@ -179,7 +179,7 @@
           "price": "2.50"
         }
       ],
-      "orderStatus": "IN PROGRESS",
+      "orderStatus": "DELIVERED",
       "summaryPrice": 2.5,
       "deliveryAddress": {
         "paymentMethod": "paypal",
@@ -193,12 +193,44 @@
         "flatNumber": "das"
       },
       "id": 6
+    },
+    {
+      "productList": [
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": "False",
+          "description": "Sos, ser",
+          "price": "22"
+        },
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "price": "23.50"
+        }
+      ],
+      "orderStatus": "IN PROGRESS",
+      "summaryPrice": 45.5,
+      "deliveryAddress": {
+        "paymentMethod": "paypal",
+        "orderStatus": "inProgress",
+        "city": "Poznań",
+        "street": "Piątkowska",
+        "flatNumber": "118/5",
+        "lastName": "Sadalla",
+        "phone": "0660461470",
+        "email": "dsadsa",
+        "firstName": "Jan"
+      },
+      "id": 7
     }
   ],
   "users": [
     {
       "id": 1,
-      "name": "admin",
+      "username": "admin",
       "password": "admin"
     }
   ]

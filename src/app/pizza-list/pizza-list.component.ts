@@ -6,6 +6,7 @@ import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {Dishes} from '../models/dishes.model';
 import {OrderService} from '../order.service';
+import {LoginDataService} from '../login-data.service';
 
 @Component({
   selector: 'app-pizza-list',
@@ -20,6 +21,7 @@ export class PizzaListComponent implements OnInit, OnDestroy {
   constructor(
     private readonly service: PizzaService,
     private orderService: OrderService,
+    private loginService: LoginDataService
   ) {
   }
 
@@ -48,5 +50,9 @@ export class PizzaListComponent implements OnInit, OnDestroy {
 
   addDish(dish: Dishes): void {
     this.orderService.add(dish);
+  }
+
+  isAdminLogged(): boolean {
+    return this.loginService.getIsLogged();
   }
 }

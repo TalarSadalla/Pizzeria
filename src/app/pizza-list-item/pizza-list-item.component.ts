@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Pizzas} from '../models/pizzas.model';
-import {PizzaService} from '../pizza.service';
+import {PizzaService} from '../services/pizza.service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 

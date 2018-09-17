@@ -1,6 +1,10 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OrderListComponent } from './order-list.component';
+import {OrderListComponent} from './order-list.component';
+import {OrderComponent} from '../order/order.component';
+import {HttpClientModule} from '@angular/common/http';
+import {OrderService} from '../services/order.service';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('OrderListComponent', () => {
   let component: OrderListComponent;
@@ -8,9 +12,16 @@ describe('OrderListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderListComponent ]
+      declarations: [OrderListComponent, OrderComponent],
+      providers: [
+        OrderService,
+      ],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +30,15 @@ describe('OrderListComponent', () => {
     fixture.detectChanges();
   });
 
+
+  afterEach(() => {
+    TestBed.resetTestingModule();
+  });
+
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
 });

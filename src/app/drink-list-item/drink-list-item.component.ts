@@ -2,7 +2,7 @@ import {Component, Input, OnInit, Output, EventEmitter, OnDestroy} from '@angula
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {Drinks} from '../models/drinks.model';
-import {DrinkService} from '../drink.service';
+import {DrinkService} from '../services/drink.service';
 import {Subject} from 'rxjs';
 
 @Component({

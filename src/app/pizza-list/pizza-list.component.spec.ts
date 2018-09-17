@@ -1,6 +1,12 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PizzaListComponent } from './pizza-list.component';
+import {PizzaListComponent} from './pizza-list.component';
+import {PizzaService} from '../services/pizza.service';
+import {LoginDataService} from '../services/login-data.service';
+import {OrderService} from '../services/order.service';
+import {HttpClientModule} from '@angular/common/http';
+import {RouterTestingModule} from '@angular/router/testing';
+import {OrderComponent} from '../order/order.component';
 
 describe('PizzaListComponent', () => {
   let component: PizzaListComponent;
@@ -8,9 +14,18 @@ describe('PizzaListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PizzaListComponent ]
+      declarations: [PizzaListComponent, OrderComponent],
+      providers: [
+        PizzaService,
+        OrderService,
+        LoginDataService,
+      ],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +37,5 @@ describe('PizzaListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

@@ -1,12 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 
 import {Pizzas} from '../models/pizzas.model';
-import {PizzaService} from '../pizza.service';
+import {PizzaService} from '../services/pizza.service';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {Dishes} from '../models/dishes.model';
-import {OrderService} from '../order.service';
-import {LoginDataService} from '../login-data.service';
+import {OrderService} from '../services/order.service';
+import {LoginDataService} from '../services/login-data.service';
 
 @Component({
   selector: 'app-pizza-list',
@@ -20,8 +20,8 @@ export class PizzaListComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly service: PizzaService,
-    private orderService: OrderService,
-    private loginService: LoginDataService
+    private readonly orderService: OrderService,
+    private readonly loginService: LoginDataService
   ) {
   }
 

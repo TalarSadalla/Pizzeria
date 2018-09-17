@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-import {User} from './models/user.model';
+import {User} from '../models/user.model';
 import {Observable} from 'rxjs';
-import {Pastas} from './models/pastas.model';
+import {Pastas} from '../models/pastas.model';
 
 @Injectable({
   providedIn: 'root'

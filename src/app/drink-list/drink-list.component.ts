@@ -2,10 +2,10 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {Drinks} from '../models/drinks.model';
-import {DrinkService} from '../drink.service';
+import {DrinkService} from '../services/drink.service';
 import {Dishes} from '../models/dishes.model';
-import {OrderService} from '../order.service';
-import {LoginDataService} from '../login-data.service';
+import {OrderService} from '../services/order.service';
+import {LoginDataService} from '../services/login-data.service';
 
 @Component({
   selector: 'app-drink-list',

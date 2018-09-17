@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {OrderService} from '../order.service';
+import {OrderService} from '../services/order.service';
 import {Dishes} from '../models/dishes.model';
 import {Orders} from '../models/orders.model';
 

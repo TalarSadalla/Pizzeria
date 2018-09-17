@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { PizzaService } from './pizza.service';
+import {HttpClient, HttpHandler} from '@angular/common/http';
 
 describe('PizzaServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [PizzaService]
+      providers: [HttpClient,
+        HttpHandler,
+        PizzaService]
     });
   });
 

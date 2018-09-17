@@ -2,10 +2,10 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 import {Pastas} from '../models/pastas.model';
-import {PastaService} from '../pasta.service';
-import {OrderService} from '../order.service';
+import {PastaService} from '../services/pasta.service';
+import {OrderService} from '../services/order.service';
 import {Dishes} from '../models/dishes.model';
-import {LoginDataService} from '../login-data.service';
+import {LoginDataService} from '../services/login-data.service';
 
 @Component({
   selector: 'app-pasta-list',

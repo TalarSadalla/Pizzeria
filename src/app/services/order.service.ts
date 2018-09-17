@@ -1,8 +1,8 @@
 import {Injectable, OnDestroy, OnInit} from '@angular/core';
-import {Dishes} from './models/dishes.model';
+import {Dishes} from '../models/dishes.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
-import {Orders} from './models/orders.model';
+import {Orders} from '../models/orders.model';
 
 @Injectable({
   providedIn: 'root',

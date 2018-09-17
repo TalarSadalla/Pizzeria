@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {Orders} from '../models/orders.model';
-import {OrderService} from '../order.service';
+import {OrderService} from '../services/order.service';
 
 @Component({
   selector: 'app-order-list-item',

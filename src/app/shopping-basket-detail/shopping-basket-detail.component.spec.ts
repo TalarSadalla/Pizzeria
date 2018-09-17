@@ -1,20 +1,27 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { OrderDetailComponent } from './shopping-basket-detail.component';
+import {ShoppingBasketDetailComponent} from './shopping-basket-detail.component';
+import {OrderService} from '../services/order.service';
+import {HttpClient, HttpHandler} from '@angular/common/http';
 
 describe('OrderDetailComponent', () => {
-  let component: OrderDetailComponent;
-  let fixture: ComponentFixture<OrderDetailComponent>;
+  let component: ShoppingBasketDetailComponent;
+  let fixture: ComponentFixture<ShoppingBasketDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrderDetailComponent ]
+      declarations: [ShoppingBasketDetailComponent],
+      providers: [
+        HttpClient,
+        HttpHandler,
+        OrderService,
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrderDetailComponent);
+    fixture = TestBed.createComponent(ShoppingBasketDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

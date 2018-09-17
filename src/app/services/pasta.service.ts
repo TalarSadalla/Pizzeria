@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Pastas} from './models/pastas.model';
+import {Pastas} from '../models/pastas.model';
 
 @Injectable({
   providedIn: 'root'

@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core'
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {Pastas} from '../models/pastas.model';
-import {PastaService} from '../pasta.service';
+import {PastaService} from '../services/pasta.service';
 import {Subject} from 'rxjs';
 
 @Component({

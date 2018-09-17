@@ -1,13 +1,13 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {PizzaService} from '../pizza.service';
-import {PastaService} from '../pasta.service';
-import {DrinkService} from '../drink.service';
+import {PizzaService} from '../services/pizza.service';
+import {PastaService} from '../services/pasta.service';
+import {DrinkService} from '../services/drink.service';
 import {Pizzas} from '../models/pizzas.model';
 import {Drinks} from '../models/drinks.model';
 import {Pastas} from '../models/pastas.model';
-import {OrderService} from '../order.service';
+import {OrderService} from '../services/order.service';
 import {Dishes} from '../models/dishes.model';
-import {LoginDataService} from '../login-data.service';
+import {LoginDataService} from '../services/login-data.service';
 import {Subject} from 'rxjs';
 
 @Component({

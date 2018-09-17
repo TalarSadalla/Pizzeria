@@ -20,8 +20,8 @@ export class ShoppingBasketDetailComponent implements OnInit {
     this.orderService.clear();
   }
 
-  orderSize(): number {
-    return this.orderService.orders.length;
+  getOrderSize(): number {
+    return this.orderService.getOrderSize();
   }
 
   getOrders(): Dishes[] {

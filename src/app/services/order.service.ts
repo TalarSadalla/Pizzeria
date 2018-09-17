@@ -28,6 +28,10 @@ export class OrderService implements OnInit, OnDestroy {
     return sumCount;
   }
 
+  getOrderSize(): number {
+    return this.orders.length;
+  }
+
   getOrders(): Observable<Orders[]> {
     return this.http.get<Orders[]>('http://localhost:3000/orders');
   }

@@ -1,4 +1,4 @@
-<div *ngIf="orderSize()">
+<div *ngIf="getOrderSize()">
   <h2>Your order</h2>
   <button class="clear"
           (click)="clearOrder()">clear
@@ -15,7 +15,7 @@
   </table>
   <span class="order grey">Price of the order: {{getOrderPrice()}}</span>
 </div>
-<td><a *ngIf="orderSize()" routerLink="/orderForm/">
+<td><a *ngIf="getOrderSize()" routerLink="/orderForm/">
   <span class="badge">Take the order</span>
 </a>
 

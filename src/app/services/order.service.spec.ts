@@ -1,18 +1,19 @@
 import {TestBed, inject} from '@angular/core/testing';
 
 import {OrderService} from './order.service';
-import {HttpClient, HttpHandler} from '@angular/common/http';
+import {HttpClient, HttpClientModule, HttpHandler} from '@angular/common/http';
 import {Dishes} from '../models/dishes.model';
 import {Orders} from '../models/orders.model';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('OrderService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        HttpClient,
-        HttpHandler,
-        OrderService
-      ]
+      providers: [],
+      imports: [
+        RouterTestingModule,
+        HttpClientModule
+      ],
     });
   });
 
@@ -96,5 +97,17 @@ describe('OrderService', () => {
     expect(postSpy).toHaveBeenCalled();
   }));
 
+  it('should verify get on getOrder method', inject([OrderService], (orderService: OrderService) => {
+    // Given
+    const clientModule = TestBed.get(HttpClient);
+    const postSpy = spyOn(clientModule, 'get');
+    const order = <Orders>{id: 1};
+
+    // When
+    orderService.getOrder(order.id);
+
+    // Then
+    expect(postSpy).toHaveBeenCalled();
+  }));
 
 });

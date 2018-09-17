@@ -22,7 +22,7 @@ describe('OrderListItemComponent', () => {
         LocationStrategy,
         {
           provide: ActivatedRoute, useValue: {
-            snapshot: {paramMap: convertToParamMap({'id': '1',})}
+            snapshot: {paramMap: convertToParamMap({'id': '1'})}
           }
         },
         {provide: LocationStrategy, useClass: PathLocationStrategy},

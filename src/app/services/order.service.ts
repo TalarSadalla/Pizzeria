@@ -40,8 +40,8 @@ export class OrderService implements OnInit, OnDestroy {
     return this.http.get<Orders>(`http://localhost:3000/orders/${id}`);
   }
 
-  saveOrder(order: Orders): void {
-    this.http.post<Orders>('http://localhost:3000/orders', order).subscribe();
+  saveOrder(order: Orders): Observable<Orders> {
+    return this.http.post<Orders>('http://localhost:3000/orders', order);
   }
 
   editOrder(order: Orders): void {

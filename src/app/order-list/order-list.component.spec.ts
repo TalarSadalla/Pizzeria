@@ -30,7 +30,6 @@ describe('OrderListComponent', () => {
     fixture.detectChanges();
   });
 
-
   afterEach(() => {
     TestBed.resetTestingModule();
   });
